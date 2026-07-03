@@ -1,0 +1,145 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=JetBrains+Mono:wght@400;500;700;800&family=Share+Tech+Mono&display=swap');
+@import "tailwindcss";
+
+@theme {
+  --font-sans: "Inter", ui-sans-serif, system-ui, sans-serif;
+  --font-mono: "JetBrains Mono", ui-monospace, SFMono-Regular, monospace;
+  --font-tech: "Share Tech Mono", monospace;
+  --color-neo-yellow: #FFE21A;
+  --color-neo-bg: #E8E8E8;
+}
+
+/* Custom Scrollbars */
+::-webkit-scrollbar {
+  width: 10px;
+  height: 10px;
+}
+::-webkit-scrollbar-track {
+  background: #f1f1f1;
+  border-left: 2px solid #000000;
+}
+::-webkit-scrollbar-thumb {
+  background: #000000;
+  border: 2px solid #f1f1f1;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #FFE21A;
+}
+
+/* Neo-Brutalist utility classes */
+.neo-box {
+  border: 2px solid #000000;
+  background-color: #ffffff;
+  box-shadow: 4px 4px 0px #000000;
+}
+
+.neo-btn {
+  border: 2px solid #000000;
+  background-color: #ffffff;
+  box-shadow: 3px 3px 0px #000000;
+  transition: all 100ms ease;
+  cursor: pointer;
+}
+.neo-btn:hover {
+  transform: translate(1px, 1px);
+  box-shadow: 2px 2px 0px #000000;
+}
+.neo-btn:active {
+  transform: translate(3px, 3px);
+  box-shadow: 0px 0px 0px #000000;
+}
+
+.neo-btn-primary {
+  border: 2px solid #000000;
+  background-color: #FFE21A;
+  box-shadow: 3px 3px 0px #000000;
+  transition: all 100ms ease;
+  cursor: pointer;
+}
+.neo-btn-primary:hover {
+  transform: translate(1px, 1px);
+  box-shadow: 2px 2px 0px #000000;
+}
+.neo-btn-primary:active {
+  transform: translate(3px, 3px);
+  box-shadow: 0px 0px 0px #000000;
+}
+
+.neo-input {
+  border: 2px solid #000000;
+  background-color: #fcfcfc;
+  padding: 0.5rem;
+  transition: all 100ms ease;
+}
+.neo-input:focus {
+  background-color: #ffffff;
+  outline: none;
+  box-shadow: 0 0 0 2px #FFE21A;
+}
+
+/* Print Overrides */
+@media print {
+  * {
+    -webkit-print-color-adjust: exact !important;
+    print-color-adjust: exact !important;
+  }
+  html, body {
+    background-color: #ffffff !important;
+    background-image: none !important;
+    color: #000000 !important;
+    font-family: ui-monospace, SFMono-Regular, "SF Mono", "JetBrains Mono", Menlo, Monaco, Consolas, monospace !important;
+  }
+
+  /* Hide UI wrapper modules entirely */
+  #app-header,
+  #sidebar-container,
+  #navigation-step-bar,
+  #btn-next-step-pipeline,
+  #btn-trigger-print,
+  #sidebar-overlay,
+  #project-list-sidebar,
+  .print\:hidden,
+  footer {
+    display: none !important;
+  }
+
+  /* Force display block of main print content */
+  #app-container,
+  #main-frame,
+  #workspace-content,
+  #proposal-print-view {
+    display: block !important;
+    padding: 0 !important;
+    margin: 0 !important;
+    border: none !important;
+    box-shadow: none !important;
+    background: transparent !important;
+  }
+
+  #printable-scoping-document {
+    border: none !important;
+    box-shadow: none !important;
+    padding: 0 !important;
+    margin: 0 !important;
+    width: 100% !important;
+    max-width: 100% !important;
+    background: transparent !important;
+  }
+
+  .page-break-before {
+    page-break-before: always !important;
+    break-before: page !important;
+  }
+}
+
+/* Page break and avoid-split utilities for print and PDF generation */
+.page-break-before {
+  page-break-before: always !important;
+  break-before: page !important;
+}
+
+.avoid-break {
+  page-break-inside: avoid !important;
+  break-inside: avoid !important;
+}
+

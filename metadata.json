@@ -1,0 +1,6 @@
+{
+  "name": "SunSummary",
+  "description": "Solar project scoping and financial reporting utility. Localized multi-currency and multilingual project reports in Neo-Brutalist engineering style.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
